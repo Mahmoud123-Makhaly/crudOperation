@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import Navs from './Components/Navs/NavBar';
+import SideBar from './Components/SideBar/SideBar';
+import { Routes } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import Home from './Components/Home/Home';
+import AllCategories from './Components/AllCategories/AllCategories';
+import ProductDetails from './Components/ProductDetails/ProductDetails';
+  import AddCategories from './Components/AddCategories/AddCategories';
+import Edit from './Components/AllCategories/Edit';
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+ <Navs/>
+ <div className='row'>
+ <div className='col-md-2'>
+<SideBar/>
+ </div>
+ <div className='col-md-10'>
+ <Routes>
+ <Route path='/' element={<Home/>}/> 
+ <Route path='/Products' element={<AllCategories/>}/>
+ <Route path='/Products/:id' element={<ProductDetails/>}/>
+ <Route path='/AddCategories' element={<AddCategories/>}/>
+ <Route path='/edit/:id' element={<Edit/>}/>
+
+ </Routes>
+ </div>
+ </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

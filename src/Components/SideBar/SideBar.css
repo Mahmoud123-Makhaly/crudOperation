@@ -1,0 +1,17 @@
+.sidebar{
+    background: hsl(210,17%,98%);
+    padding: .8em 1em;
+    height: 100vh;
+}
+.sidebar li{
+    margin-bottom: 15px;
+}
+.sidebar li a{
+    text-decoration: none;
+    background: #ccc;
+    cursor: pointer;
+    width: 100%;;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;;
+}
